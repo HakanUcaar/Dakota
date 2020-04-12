@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArduinoSerialPortDataReceiver.cs" />
+    <Compile Include="CustomDataReceiver.cs" />
     <Compile Include="Machines\ArduinoMachine.cs" />
     <Compile Include="Machines\Movements\ArdMovement.cs" />
     <Compile Include="Program.cs" />

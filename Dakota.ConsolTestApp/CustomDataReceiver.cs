@@ -6,12 +6,12 @@ using Dakota.Receiver;
 
 namespace Dakota.ConsolTestApp
 {
-    public class ArduinoSerialPortDataReceiver : AbstractReceiver
+    public class CustomDataReceiver : AbstractReceiver
     {
         static bool _continue;
         private SerialPort Serial = new SerialPort();
 
-        public ArduinoSerialPortDataReceiver(IMachine Machine) : base(Machine)
+        public CustomDataReceiver(IMachine Machine) : base(Machine)
         {
         }
 
@@ -19,7 +19,7 @@ namespace Dakota.ConsolTestApp
         {
             try
             {
-                Serial.PortName = "COM3";
+                Serial.PortName = "COM7";
                 Serial.BaudRate = 9600;
                 Serial.Parity = Parity.None;
                 Serial.DataBits = 8;
