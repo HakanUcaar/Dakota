@@ -51,9 +51,10 @@ namespace Dakota.Receiver
             string data = Serial.ReadLine();
             if (_continue)
             {
-                if (this.Machine.MovementList.Any(o => data.IndexOf(o.RecieverTag) != -1))
+                var Movement = this.Machine.MovementList.Where(o => data.IndexOf(o.RecieverTag) != -1).FirstOrDefault();
+                if (Movement != null)
                 {
-                    this.Machine.MovementList.Where(o => data.IndexOf(o.RecieverTag) != -1).First().Value = data;
+                    Movement.Value = data;
                 }
             }
         }

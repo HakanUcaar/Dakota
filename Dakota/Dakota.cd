@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Dakota.Receiver.AbstractReceiver">
+    <Position X="2.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Receiver\AbstractReceiver.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Dakota.Receiver.SerialPortReceiver">
+    <Position X="2.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAABAAAAAAAABAAAAAAAIgAABAAAAAgAAAEAAAUAAA=</HashCode>
+      <FileName>Receiver\SerialPortReceiver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dakota.Machine.AbstractMachine">
+    <Position X="5" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAgAAIAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Machine\AbstractMachine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.231" />
+  </Class>
+  <Class Name="Dakota.Machine.AbstractMovement">
+    <Position X="8.25" Y="4" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="Dakota.Machine.AbstractMovement.OnReceiveDataHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Machine\AbstractMovement.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAABAAAAAQAAAAAAEAAAAAgAAAAAAA=</HashCode>
+      <FileName>Machine\AbstractMovement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Dakota.DataSenderManager" Collapsed="true">
+    <Position X="2.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataSenderManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
