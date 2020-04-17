@@ -43,20 +43,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomDataReceiver.cs" />
+    <Compile Include="CustomAIDataReceiver.cs" />
+    <Compile Include="Machines\AIMachine.cs" />
     <Compile Include="Machines\ArduinoMachine.cs" />
+    <Compile Include="Machines\BluetoothMachine.cs" />
+    <Compile Include="Machines\GamePadMachine.cs" />
+    <Compile Include="Machines\GamePadMovements\AsagiMovement.cs" />
+    <Compile Include="Machines\GamePadMovements\ButonXMovement.cs" />
+    <Compile Include="Machines\GamePadMovements\SagMovement.cs" />
+    <Compile Include="Machines\GamePadMovements\SolMovement.cs" />
+    <Compile Include="Machines\Movements\AIMovement.cs" />
     <Compile Include="Machines\Movements\ArdMovement.cs" />
+    <Compile Include="Machines\GamePadMovements\YukariMovement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dashboard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Dakota.Receiver.HID\Dakota.Receiver.HID.csproj">
+      <Project>{00E95398-F4AC-4F9D-A960-CDD3A512C9A2}</Project>
+      <Name>Dakota.Receiver.HID</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dakota\Dakota.csproj">
       <Project>{dba8cfb3-668a-4a3f-be7a-912c2a19d2b3}</Project>
       <Name>Dakota</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Machines\BlueToothMovements\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

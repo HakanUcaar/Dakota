@@ -16,5 +16,6 @@ namespace Dakota.Receiver
         }
 
         public abstract void Connect();
+        public abstract void DisConnect();
     }
 }

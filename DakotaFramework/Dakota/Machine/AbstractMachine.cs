@@ -27,7 +27,7 @@ namespace Dakota.Machine
         }
         public IMovement NewMovement<T>() where T : IMovement
         {
-            var NewMove = Activator.CreateInstance<T>();
+            var NewMove = Activator.CreateInstance(typeof(T),new object[] { this }) as IMovement;
             MovementList.Add(NewMove);
             return NewMove;
         }

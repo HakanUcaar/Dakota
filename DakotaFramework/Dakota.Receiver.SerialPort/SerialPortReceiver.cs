@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Linq;
-using Dakota.Machine;
 using System.IO.Ports;
+using System.Threading.Tasks;
+using Dakota.Machine;
 
-namespace Dakota.Receiver
+namespace Dakota.Receiver.SerialPort
 {
     public class SerialPortReceiver : AbstractReceiver
     {
-        static bool _continue;
-        private SerialPort Serial = new SerialPort();
+        bool _Continue;
+        private System.IO.Ports.SerialPort Serial = new System.IO.Ports.SerialPort();
 
         public string PortName { get; set; }
         public int BaudRate { get; set; }
@@ -35,27 +36,34 @@ namespace Dakota.Receiver
                 Serial.DataReceived += ReceivePort;
                 Serial.Open();
 
-                _continue = true;
+                _Continue = true;
                 Console.WriteLine(this.Machine.Name + " bağlandı ");
             }
             catch (Exception ex)
             {
-                _continue = false;
+                _Continue = false;
                 Console.WriteLine("Bağlantı Başarısız ");
             }
         }
+        public override void DisConnect()
+        {
+            _Continue = false;
+            Serial.Close();
+        }
 
-
-        public void ReceivePort(object sender, SerialDataReceivedEventArgs e)
+        public async void ReceivePort(object sender, SerialDataReceivedEventArgs e)
         {
             string data = Serial.ReadLine();
-            if (_continue)
+            if (_Continue)
             {
-                var Movement = this.Machine.MovementList.Where(o => data.IndexOf(o.RecieverTag) != -1).FirstOrDefault();
-                if (Movement != null)
+                await Task.Run(() => 
                 {
-                    Movement.Value = data;
-                }
+                    var Movement = this.Machine.MovementList.Where(o => data.IndexOf(o.RecieverTag) != -1).FirstOrDefault();
+                    if (Movement != null)
+                    {
+                        Movement.Value = data;
+                    }
+                });
             }
         }
     }
