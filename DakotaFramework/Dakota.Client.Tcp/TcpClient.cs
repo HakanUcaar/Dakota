@@ -34,25 +34,21 @@ namespace Dakota.Client.Tcp
                 Console.WriteLine(e.Message);
             }
         }
-
         public override void DisConnect()
         {
             Client.Close();
         }
-
         public override void SendData(string Data)
         {
             Byte[] data = Encoding.UTF8.GetBytes(Data);
             NetworkStream stream = Client.GetStream();
             stream.Write(data, 0, data.Length);
         }
-
         public override void SendData(Byte[] Data)
         {
             NetworkStream stream = Client.GetStream();
             stream.Write(Data, 0, Data.Length);
         }
-
         public override void Dispose()
         {
             if (Client.Connected)
