@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Dakota.Client.WebSoket
 {
-    public class WebSoketClient : AbstractClient
+    public class WebSocketClient : AbstractClient
     {
         private ClientWebSocket WebSocket = new ClientWebSocket();
         public string URI { get; set; }
 
-        public WebSoketClient()
+        public WebSocketClient()
         {
 
         }

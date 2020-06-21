@@ -25,7 +25,7 @@ namespace Dakota.Receiver.HID
             
         }
 
-        public override void Connect()
+        public override bool Connect()
         {
             try
             {
@@ -36,11 +36,17 @@ namespace Dakota.Receiver.HID
                 {
                     _Continue = true;
                     ReceiveData();
-                }                
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }           
             }
             catch (Exception e)
             {
                 _Continue = false;
+                return false;
             }
         }
 

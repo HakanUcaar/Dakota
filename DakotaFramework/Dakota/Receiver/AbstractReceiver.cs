@@ -15,7 +15,7 @@ namespace Dakota.Receiver
             this.Machine = Machine;
         }
 
-        public abstract void Connect();
+        public abstract bool Connect();
         public abstract void DisConnect();
     }
 }

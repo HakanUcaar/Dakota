@@ -40,6 +40,9 @@
     <Reference Include="Dakota.Client.SignalR">
       <HintPath>..\..\..\..\DakotaFramework\Dakota.Client.SignalR\bin\Debug\Dakota.Client.SignalR.dll</HintPath>
     </Reference>
+    <Reference Include="Dakota.Receiver.HID">
+      <HintPath>..\..\..\..\DakotaFramework\Dakota.Receiver.HID\bin\Debug\Dakota.Receiver.HID.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -55,6 +58,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Machine\GamePadMachine.cs" />
+    <Compile Include="Machine\GamePadMovements\AsagiMovement.cs" />
+    <Compile Include="Machine\GamePadMovements\ButtonAMovement.cs" />
+    <Compile Include="Machine\GamePadMovements\ButtonBMovement.cs" />
+    <Compile Include="Machine\GamePadMovements\ButtonOnSagMovement.cs" />
+    <Compile Include="Machine\GamePadMovements\ButtonOnSolMovement.cs" />
+    <Compile Include="Machine\GamePadMovements\ButtonXMovement.cs" />
+    <Compile Include="Machine\GamePadMovements\ButtonYMovement.cs" />
+    <Compile Include="Machine\GamePadMovements\SagMovement.cs" />
+    <Compile Include="Machine\GamePadMovements\SolMovement.cs" />
+    <Compile Include="Machine\GamePadMovements\YukariMovement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

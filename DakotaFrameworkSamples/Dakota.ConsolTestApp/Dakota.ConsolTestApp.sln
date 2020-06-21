@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dakota.ConsolTestApp", "Dakota.ConsolTestApp.csproj", "{DD930B59-579F-4BD5-811B-E49A59A3F3AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD930B59-579F-4BD5-811B-E49A59A3F3AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD930B59-579F-4BD5-811B-E49A59A3F3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD930B59-579F-4BD5-811B-E49A59A3F3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD930B59-579F-4BD5-811B-E49A59A3F3AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9FE49B9-8858-4E2F-9333-E8DF7088AF78}
+	EndGlobalSection
+EndGlobal

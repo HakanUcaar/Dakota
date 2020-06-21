@@ -22,7 +22,7 @@ namespace Dakota.ConsolTestApp
             //Receiver.Connect();
             //Dash.AddReceiver(Receiver);
 
-            //var Receiver1 = new CustomAIDataReceiver(new AIMachine("AI1","Yapay Makine 1"));
+            //var Receiver1 = new CustomAIDataReceiver(new AIMachine("AI1", "Yapay Makine 1"));
             //Receiver1.Connect();
             //Dash.AddReceiver(Receiver1);
             //var Receiver2 = new CustomAIDataReceiver(new AIMachine("AI2", "Yapay Makine 2"));

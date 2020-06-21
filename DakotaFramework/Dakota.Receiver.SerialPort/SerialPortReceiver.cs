@@ -23,7 +23,7 @@ namespace Dakota.Receiver.SerialPort
 
         }
 
-        public override void Connect()
+        public override bool Connect()
         {
             try
             {
@@ -37,12 +37,12 @@ namespace Dakota.Receiver.SerialPort
                 Serial.Open();
 
                 _Continue = true;
-                Console.WriteLine(this.Machine.Name + " bağlandı ");
+                return true;
             }
             catch (Exception ex)
             {
                 _Continue = false;
-                Console.WriteLine("Bağlantı Başarısız ");
+                return false;
             }
         }
         public override void DisConnect()
@@ -53,17 +53,24 @@ namespace Dakota.Receiver.SerialPort
 
         public async void ReceivePort(object sender, SerialDataReceivedEventArgs e)
         {
-            string data = Serial.ReadLine();
-            if (_Continue)
+            try
             {
-                await Task.Run(() => 
+                string data = Serial.ReadLine();
+                if (_Continue)
                 {
-                    var Movement = this.Machine.MovementList.Where(o => data.IndexOf(o.RecieverTag) != -1).FirstOrDefault();
-                    if (Movement != null)
+                    await Task.Run(() =>
                     {
-                        Movement.Value = data;
-                    }
-                });
+                        var Movement = this.Machine.MovementList.Where(o => data.IndexOf(o.RecieverTag) != -1).FirstOrDefault();
+                        if (Movement != null)
+                        {
+                            Movement.Value = data;
+                        }
+                    });
+                }
+            }
+            catch (Exception)
+            {
+                
             }
         }
     }

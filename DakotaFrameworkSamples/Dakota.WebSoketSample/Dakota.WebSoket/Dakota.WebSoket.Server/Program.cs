@@ -26,10 +26,6 @@ namespace Dakota.WebSoket.Server
         {
             private int count = 0;
 
-            //### Starting the server        
-            // Using HttpListener is reasonably straightforward. Start the listener and run a loop that receives and processes incoming WebSocket connections.
-            // Each iteration of the loop "asynchronously waits" for the next incoming request using the `GetContextAsync` extension method (defined below).             
-            // If the request is for a WebSocket connection then pass it on to `ProcessRequest` - otherwise set the status code to 400 (bad request). 
             public async void Start(string listenerPrefix)
             {
                 HttpListener listener = new HttpListener();

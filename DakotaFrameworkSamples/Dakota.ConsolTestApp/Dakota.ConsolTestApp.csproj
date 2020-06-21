@@ -33,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dakota, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DakotaFramework\Dakota\bin\Debug\Dakota.dll</HintPath>
+    </Reference>
+    <Reference Include="Dakota.Receiver.HID, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DakotaFramework\Dakota.Receiver.HID\bin\Debug\Dakota.Receiver.HID.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -61,16 +69,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Dakota.Receiver.HID\Dakota.Receiver.HID.csproj">
-      <Project>{00E95398-F4AC-4F9D-A960-CDD3A512C9A2}</Project>
-      <Name>Dakota.Receiver.HID</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Dakota\Dakota.csproj">
-      <Project>{dba8cfb3-668a-4a3f-be7a-912c2a19d2b3}</Project>
-      <Name>Dakota</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Machines\BlueToothMovements\" />

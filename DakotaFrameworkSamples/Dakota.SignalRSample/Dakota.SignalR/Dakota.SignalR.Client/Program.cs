@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dakota.Client.SignalR;
+using Dakota.Receiver.HID;
+using Dakota.SignalR.Client.Machine;
 
 namespace Dakota.SignalR.Client
 {
@@ -13,19 +15,27 @@ namespace Dakota.SignalR.Client
 
         static void Main(string[] args)
         {
-            Client = new SigalRClient();
+
+            var Receiver = new HIDReceiver(new GamePadMachine());
+            Receiver.VendorId = 0x0810;
+            Receiver.ProductId = 0xe501;
+
+            Client = new SigalRClient(Receiver);
             Client.URL = "http://localhost:13000/";
             Client.HubName = "DataHub";
             Client.MethodName = "Receive";
             Client.Connect();
-            Test();
+
+            Client.StartReceiver();
+
+            //Test();
         }
 
         static void Test()
         {
             Console.InputEncoding = System.Text.Encoding.Unicode;
             Console.WriteLine("Lütfen bir yazı girin");
-            string Data = Console.ReadLine(); ;
+            string Data = Console.ReadLine();
             Client.SendData(Data);
             Test();
         }

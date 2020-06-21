@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dakota.Client.Tcp", "Dakota
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dakota.Client.SignalR", "Dakota.Client.SignalR\Dakota.Client.SignalR.csproj", "{2792CB8C-9E31-4FD2-B715-FF2A0DD6EAA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dakota.Client.WebSoket", "Dakota.Client.WebSoket\Dakota.Client.WebSoket.csproj", "{07A61FF0-B501-4BB3-9CCB-89B1FD3A9A3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dakota.Client.WebSocket", "Dakota.Client.WebSoket\Dakota.Client.WebSocket.csproj", "{07A61FF0-B501-4BB3-9CCB-89B1FD3A9A3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
