@@ -73,5 +73,35 @@ namespace Dakota.Receiver.SerialPort
                 
             }
         }
+        public async void SendData(int Data)
+        {
+            if (_Continue)
+            {
+                await Task.Run(() =>
+                {
+                    int Val = Convert.ToInt32(Data);
+                    int TrackSend = Convert.ToInt32(Val);
+                    byte[] buffer_2_send = new byte[4];
+
+                    byte[] data_2_send = BitConverter.GetBytes(TrackSend);
+                    buffer_2_send[0] = data_2_send[0];
+                    buffer_2_send[1] = data_2_send[1];
+                    buffer_2_send[2] = data_2_send[2];
+                    buffer_2_send[3] = data_2_send[3];
+                    this.Serial.Write(buffer_2_send, 0, 4);
+                
+                });
+            }
+        }
+        public async void SendData(string Data)
+        {
+            if (_Continue)
+            {
+                await Task.Run(() =>
+                {
+                    this.Serial.WriteLine(Data);
+                });
+            }
+        }
     }
 }
